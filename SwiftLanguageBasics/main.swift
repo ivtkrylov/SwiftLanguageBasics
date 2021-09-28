@@ -32,7 +32,7 @@ NumberDel3(7)
 
 // Создать возрастающий массив из 100 чисел.
 var Array1: [Int] = []
-for i in 0 ... 100 {
+for i in 0 ... 99 {
     Array1.append(i)
 }
 print(Array1)
