@@ -84,3 +84,16 @@ c. Зачеркнуть в списке числа от 2 + p до n, счита
 d. Найти первое не зачёркнутое число в списке, большее, чем p, и присвоить значению переменной p это число.
 e. Повторять шаги c и d, пока возможно. */
 
+var Array3 = [Int](2...1000)
+for i in Array3{
+    for j in Array3{
+        if j % i == 0 && j != i {
+            Array3.remove(at: Array3.firstIndex(of: j)!)
+        }
+    }
+    if Array3.count > 100 {
+        Array3.removeLast()
+    }
+}
+
+print(Array3)
