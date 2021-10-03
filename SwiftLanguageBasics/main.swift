@@ -71,7 +71,7 @@ struct TrunkCar{
     var Vtrunk: Double
     var engine: ActionCar
     var window: ActionWindow
-    var deltaVtrunk: Double
+    var deltaVtrunk: ActionCargo
     
     mutating func izmWindows(_ enum1: ActionWindow ){
         switch enum1 {
@@ -97,9 +97,10 @@ enum ActionWindow:String {
         case open_windows = "Открыть окно"
         case close_windows = "Закрыть окно"
     }
-enum ActionCargo: String {
-    case in_cargo = "Погрузить груз"
-    case off_cargo = "Выгрузить окно"
+enum ActionCargo {
+    case in_cargo   //багажник загружен
+    case off_cargo  //багажник пустой
+    
 }
 
 //5. Инициализировать несколько экземпляров структур. Применить к ним различные действия.
@@ -109,9 +110,10 @@ enum ActionCargo: String {
     Car1.km = 100   // проверка работы наблюдателя свойств
     Car1.PrintSportCar()
     Car1.izmEngine(enum1: .close_engine)
+    Car1.deltaVtrunk = 5
     Car1.PrintSportCar()
-
-var Car2 = TrunkCar(marka: "Iveco", age: 2001, Vtrunk: 5, engine: .close_engine, window: .close_windows, deltaVtrunk: 5)
+  
+var Car2 = TrunkCar(marka: "Iveco", age: 2001, Vtrunk: 5, engine: .close_engine, window: .close_windows, deltaVtrunk: .in_cargo)
 Car2.PrintTrunkCar()
 Car2.izmWindows(.open_windows)
 Car2.PrintTrunkCar()
